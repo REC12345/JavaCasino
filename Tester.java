@@ -4,7 +4,7 @@ public class Tester
         {
             NoteTaker noting = new NoteTaker();
             System.out.println(noting);
-            noting.writeMode();
+            noting.write();
             System.out.println(noting);
 
         }

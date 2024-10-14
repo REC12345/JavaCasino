@@ -33,13 +33,6 @@ Scanner theScanTron = new Scanner(System.in);
         notesPlace += notesUpdate.length();
     }
 
-//Reading
-    public void readMode()
-    {
-        System.out.println("Here are your notes: ");
-        System.out.println(notes);
-    }
-
 //Deleting
     public void delete()
     {
@@ -65,7 +58,7 @@ Scanner theScanTron = new Scanner(System.in);
 //toString--------------------------------------------------------------
     public String toString()
     {
-        return notes;
+        return "Here are your notes:" + notes;
     }
 
 }
