@@ -2,7 +2,11 @@ public class Tester
 {
     public static void main(String[] args) {
         {
-            System.out.println("Hello World!");
+            NoteTaker noting = new NoteTaker();
+            System.out.println(noting);
+            noting.writeMode();
+            System.out.println(noting);
+
         }
     }
 
