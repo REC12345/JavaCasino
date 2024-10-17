@@ -1,7 +1,23 @@
 public class Casino
 {
-//Variables
+//Variables(Money)
 //Constructors
-//Methods
-//toString
+//Methods(playCraps, playBlackjack, playSlots, playRoulette, etc...)
+public void playBlackjack()
+{
+
+}
+public void playCraps()
+{
+
+}
+public void playSlots()
+{
+
+}
+public void playRoulette()
+{
+
+}
+//toString(Should return the users balance)
 }
