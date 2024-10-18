@@ -3,6 +3,15 @@ public class Casino
 //Variables(User's balance)
     private double balance;
 //Constructors
+    public Casino(double b)
+    {
+        balance = b;
+    }
+    public Casino()
+    {
+        balance = 0.0;
+    }
+
 //Methods(Different games)
     public void playBlackjack()
     {
