@@ -22,7 +22,7 @@ public class Player
                 while(play == true)
                 {   
                 //Game choice
-                    System.out.println("Which would you like to play?\n");
+                    System.out.println("Which would you like to play?");
                     System.out.println("Blackjack\n Craps\n Roulette \n Slots\n");
                     String game = theDealer.nextLine();
                     
