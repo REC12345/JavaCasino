@@ -1,6 +1,6 @@
 public class Casino
 {
-//Variables(User's balance)
+//Variables
     private double balance;
 //Constructors
     public Casino(double b)
@@ -12,7 +12,7 @@ public class Casino
         balance = 0.0;
     }
 
-//Methods(Different games)
+//Methods(Games)
     public void playBlackjack()
     {
         //Blackjack newGame = new Blackjack(balance);
@@ -29,7 +29,8 @@ public class Casino
     {
         //Roulette newGame = new Roulette(balance);
     }
-//toString(Returns the user's balance)
+    
+//toString
     public String toString()
     {
         return "Current Balance: " + balance;
