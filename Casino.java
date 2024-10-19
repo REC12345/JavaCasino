@@ -15,7 +15,9 @@ public class Casino
 //Methods(Games)
     public void playBlackjack()
     {
-        //Blackjack newGame = new Blackjack(balance);
+        Blackjack newGame = new Blackjack(balance);
+
+        System.out.println(newGame);
     }
     public void playCraps()
     {

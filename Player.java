@@ -39,6 +39,7 @@ public class Player
                     userDecision = theDealer.nextLine();
                     play = userDecision.equals("play");
                 }
+                System.out.println(theCasino);
             }
         System.out.println("Thank You for Playing!");
     }
