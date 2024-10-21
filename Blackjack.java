@@ -1,3 +1,7 @@
+
+import java.util.Arrays;
+
+
 public class Blackjack 
 {
 //Variables
@@ -23,13 +27,13 @@ public class Blackjack
     }
 
 //Methods(Game actions)
-    public int[] getPlayerHand()
+    public String getPlayerHand()
     {
-        return playerHand;
+        return (Arrays.toString(playerHand));
     }
-    public int[] getDealerHand()
+    public String getDealerHand()
     {
-        return dealerHand;
+        return (Arrays.toString(dealerHand));
     }
 
     public void playerHit(int i)

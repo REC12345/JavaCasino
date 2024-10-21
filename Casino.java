@@ -19,29 +19,47 @@ public class Casino
 //Methods(Games)
     public void playBlackjack()
     {
-        //Game created
+    //Game created
         Blackjack newGame = new Blackjack(balance);
         System.out.println("Welcome to BlackJack!\n");
+
         System.out.println("Your hand: ");
-        System.out.println("Dealer's hand: ");
+        System.out.println(newGame.getPlayerHand());
+        int i = 0; //User's most recent hit
+
+        System.out.println("Dealer's hand: "); 
+        System.out.println(newGame.getDealerHand());
+        int j = 0; //Dealer's most recent hit
+
         System.out.println("Enter 'hit' to hit or 'stay' to stay.");
         String hit = theDealer.nextLine();
 
-        //i keeps track of the user's most recent hit
-        int i = 0;
-        if(hit.equals("hit"))
+    //Player hits
+        while(hit.equals("hit"))
         {
             newGame.playerHit(i);
             System.out.println(newGame.getPlayerHand());
             i++;
+            System.out.println("Enter 'hit' to hit or 'stay' to stay.");
+            hit = theDealer.nextLine();
         }
+    
+    //Dealer hits (Change j to the sum of the dealers cards)
+        while((j) < 17)
+        {
+            newGame.dealerHit(j);
+            System.out.println(newGame.getDealerHand());
+            j++;
+        }
+    
+    //Checks to see who wins
+        
 
-        //j keeps track of the dealers most recent hit
-        int j = 0;
-
-        //Payout and balance are printed
+    //Payout and balance are printed
         System.out.println(newGame);
     }
+
+    
     public void playCraps()
     {
         //Craps newGame = new Craps(balance);
