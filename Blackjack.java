@@ -3,8 +3,8 @@ public class Blackjack
 //Variables
     private double balance;
     private double payout;
-    private int[] playerHand = new int[10];
-    private int[] dealerHand = new int[10];
+    private int[] playerHand;
+    private int[] dealerHand;
 
 //Constructors
     public Blackjack(double b)
