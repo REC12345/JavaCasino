@@ -3,42 +3,42 @@ public class Blackjack
 //Variables
     private double balance;
     private double payout;
-    private int playerHand;
-    private int dealerHand;
+    private int[] playerHand = new int[10];
+    private int[] dealerHand = new int[10];
 
 //Constructors
     public Blackjack(double b)
     {
         balance = b;
         payout = 0.0;
-        playerHand = 0;
-        dealerHand = 0;
+        playerHand = new int[10];
+        dealerHand = new int[10];
     }
     public Blackjack()
     {
         balance = 0.0;
         payout = 0.0;
-        playerHand = 0;
-        dealerHand = 0;
+        playerHand = new int[10];
+        dealerHand = new int[10];
     }
 
 //Methods(Game actions)
-    public int getPlayerHand()
+    public int[] getPlayerHand()
     {
         return playerHand;
     }
-    public int getDealerHand()
+    public int[] getDealerHand()
     {
         return dealerHand;
     }
 
-    public void playerHit()
+    public void playerHit(int i)
     {
-        playerHand += 0;
+        playerHand[i] = 0;
     }
-    public void dealerHit()
+    public void dealerHit(int j)
     {
-        dealerHand += 0;
+        dealerHand[j] = 0;
     }
 
 
