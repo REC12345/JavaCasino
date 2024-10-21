@@ -27,15 +27,17 @@ public class Casino
         System.out.println("Enter 'hit' to hit or 'stay' to stay.");
         String hit = theDealer.nextLine();
 
-        //i and j keep track of the user's most recent hit
+        //i keeps track of the user's most recent hit
         int i = 0;
-        int j = 0;
         if(hit.equals("hit"))
         {
             newGame.playerHit(i);
             System.out.println(newGame.getPlayerHand());
             i++;
         }
+
+        //j keeps track of the dealers most recent hit
+        int j = 0;
 
         //Payout and balance are printed
         System.out.println(newGame);

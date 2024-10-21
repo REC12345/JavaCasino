@@ -34,11 +34,11 @@ public class Blackjack
 
     public void playerHit(int i)
     {
-        playerHand[i] = 0;
+        playerHand[i] = (int)(Math.random() * 14);
     }
     public void dealerHit(int j)
     {
-        dealerHand[j] = 0;
+        dealerHand[j] = (int)(Math.random() * 14);
     }
 
 
