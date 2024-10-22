@@ -25,11 +25,11 @@ public class Casino
 
         System.out.println("Your hand: ");
         System.out.println(newGame.getPlayerHand());
-        int i = 0; //User's most recent hit
+        int playersHits = 0; //Keep track of the number of hits
 
         System.out.println("Dealer's hand: "); 
         System.out.println(newGame.getDealerHand());
-        int j = 0; //Dealer's most recent hit
+        int dealersHits = 0; //Keep track of the number of hits
 
         System.out.println("Enter 'hit' to hit or 'stay' to stay.");
         String hit = theDealer.nextLine();
@@ -37,25 +37,29 @@ public class Casino
     //Player hits
         while(hit.equals("hit"))
         {
-            newGame.playerHit(i);
+            newGame.playerHit(playersHits);
             System.out.println(newGame.getPlayerHand());
-            i++;
+            playersHits++;
             System.out.println("Enter 'hit' to hit or 'stay' to stay.");
             hit = theDealer.nextLine();
         }
     
-    //Dealer hits (Change j to the sum of the dealers cards)
-        while((j) < 17)
+    //Dealer hits (Change 0 to the sum of the dealers cards)
+        while((0) < 17)
         {
-            newGame.dealerHit(j);
+            newGame.dealerHit(dealersHits);
             System.out.println(newGame.getDealerHand());
-            j++;
+            dealersHits++;
         }
     
-    //Checks to see who wins(Change i and j to be the users total)
-        if(i==j)
+    //Checks to see who wins
+        if(()>())
         {
             System.out.println("You won!");
+        }
+        else if(()=())
+        {
+            System.out.println("Tie!  Nobody wins...");
         }
         else
         {
