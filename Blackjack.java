@@ -9,6 +9,8 @@ public class Blackjack
     private double payout;
     private int[] playerHand;
     private int[] dealerHand;
+    private int playerTotal;
+    private int dealerTotal;
 
 //Constructors
     public Blackjack(double b)
@@ -17,6 +19,8 @@ public class Blackjack
         payout = 0.0;
         playerHand = new int[10];
         dealerHand = new int[10];
+        playerTotal = 0;
+        dealerTotal = 0;
     }
     public Blackjack()
     {
@@ -34,6 +38,15 @@ public class Blackjack
     public String getDealerHand()
     {
         return (Arrays.toString(dealerHand));
+    }
+
+    public int getPlayerTotal()
+    {
+        return 0;
+    }
+    public int getDealerTotal()
+    {
+        return 0;
     }
 
     public void playerHit(int i)
