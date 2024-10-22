@@ -52,8 +52,15 @@ public class Casino
             j++;
         }
     
-    //Checks to see who wins
-        
+    //Checks to see who wins(Change i and j to be the users total)
+        if(i==j)
+        {
+            System.out.println("You won!");
+        }
+        else
+        {
+            System.out.println("Dealer won, better luck next time!");
+        }
 
     //Payout and balance are printed
         System.out.println(newGame);
