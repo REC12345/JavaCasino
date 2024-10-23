@@ -53,11 +53,11 @@ public class Casino
         }
     
     //Checks to see who wins
-        if(()>())
+        if((newGame.getPlayerTotal())>(newGame.getDealerTotal()))
         {
             System.out.println("You won!");
         }
-        else if(()=())
+        else if((newGame.getPlayerTotal())==(newGame.getDealerTotal()))
         {
             System.out.println("Tie!  Nobody wins...");
         }

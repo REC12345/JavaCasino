@@ -40,22 +40,24 @@ public class Blackjack
         return (Arrays.toString(dealerHand));
     }
 
-    public int getPlayerTotal()
-    {
-        return 0;
-    }
-    public int getDealerTotal()
-    {
-        return 0;
-    }
-
     public void playerHit(int i)
     {
         playerHand[i] = (int)(Math.random() * 14);
+        playerTotal = playerHand[i];
     }
     public void dealerHit(int j)
     {
         dealerHand[j] = (int)(Math.random() * 14);
+        dealerTotal = dealerHand[j];
+    }
+
+    public int getPlayerTotal()
+    {
+        return playerTotal;
+    }
+    public int getDealerTotal()
+    {
+        return dealerTotal;
     }
 
 
