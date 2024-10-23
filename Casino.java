@@ -24,22 +24,17 @@ public class Casino
     //Game created
         Blackjack newGame = new Blackjack(balance);
         System.out.println("Welcome to BlackJack!\n");
-
-    //Hands created
-        int playersHits = 0;
-        newGame.playerHit(playersHits);
-        newGame.playerHit(playersHits);
-
-        int dealersHits = 0;
-        newGame.dealerHit(dealersHits);
     
-    //Hands shown
+    //Hands created
+        newGame.playerHit();
+        newGame.playerHit();
         System.out.println("Your hand: ");
         System.out.println(newGame.getPlayerHand());
 
+        newGame.dealerHit();
         System.out.println("Dealer's hand: "); 
         System.out.println(newGame.getDealerHand());
-        newGame.dealerHit(dealersHits);
+        newGame.dealerHit();
 
         System.out.println("Enter 'hit' to hit or 'stay' to stay.");
         String hit = theDealer.nextLine();
@@ -47,9 +42,8 @@ public class Casino
     //Player hits
         while(hit.equals("hit"))
         {
-            newGame.playerHit(playersHits);
+            newGame.playerHit();
             System.out.println(newGame.getPlayerHand());
-            playersHits++;
             System.out.println("Enter 'hit' to hit or 'stay' to stay.");
             hit = theDealer.nextLine();
         }
@@ -57,9 +51,8 @@ public class Casino
     //Dealer hits
         while((newGame.getDealerTotal()) < 17)
         {
-            newGame.dealerHit(dealersHits);
+            newGame.dealerHit();
             System.out.println(newGame.getDealerHand());
-            dealersHits++;
         }
 
     //Winner, Payout, and balance are printed
