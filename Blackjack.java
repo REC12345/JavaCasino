@@ -28,6 +28,8 @@ public class Blackjack
         payout = 0.0;
         playerHand = new int[10];
         dealerHand = new int[10];
+        playerTotal = 0;
+        dealerTotal = 0;
     }
 
 //Methods(Game actions)
@@ -40,17 +42,6 @@ public class Blackjack
         return (Arrays.toString(dealerHand));
     }
 
-    public void playerHit(int i)
-    {
-        playerHand[i] = (int)(Math.random() * 14);
-        playerTotal = playerHand[i];
-    }
-    public void dealerHit(int j)
-    {
-        dealerHand[j] = (int)(Math.random() * 14);
-        dealerTotal = dealerHand[j];
-    }
-
     public int getPlayerTotal()
     {
         return playerTotal;
@@ -60,10 +51,38 @@ public class Blackjack
         return dealerTotal;
     }
 
+    public void playerHit(int i)
+    {
+        playerHand[i] = (int)(Math.random() * 14);
+        playerTotal += playerHand[i];
+    }
+    public void dealerHit(int j)
+    {
+        dealerHand[j] = (int)(Math.random() * 14);
+        dealerTotal += dealerHand[j];
+    }
 
-
-
-//toString(Returns amount won/lost and a 'thank you for playing' message)
+//getWinner and toString
+    public String getWinner()
+    {
+        String winner;
+        if(playerTotal==dealerTotal)
+        {
+            winner = "Tie! Nobody wins...";
+        }
+        else
+        {
+            if(playerTotal>dealerTotal)
+            {
+                winner = "Player Wins!";
+            }
+            else
+            {
+                winner = "Dealer Wins!  Better luck next time.";
+            }
+        }
+        return winner;
+    }
     public String toString()
     {
         return "Payout: " + payout + "$\nFinal Balance: " + balance + "$";

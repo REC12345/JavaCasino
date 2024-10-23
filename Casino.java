@@ -4,8 +4,10 @@ public class Casino
 {
 //Scanner
     Scanner theDealer = new Scanner(System.in);
+
 //Variables
     private double balance;
+
 //Constructors
     public Casino(double b)
     {
@@ -23,13 +25,21 @@ public class Casino
         Blackjack newGame = new Blackjack(balance);
         System.out.println("Welcome to BlackJack!\n");
 
+    //Hands created
+        int playersHits = 0;
+        newGame.playerHit(playersHits);
+        newGame.playerHit(playersHits);
+
+        int dealersHits = 0;
+        newGame.dealerHit(dealersHits);
+    
+    //Hands shown
         System.out.println("Your hand: ");
         System.out.println(newGame.getPlayerHand());
-        int playersHits = 0; //Keep track of the number of hits
 
         System.out.println("Dealer's hand: "); 
         System.out.println(newGame.getDealerHand());
-        int dealersHits = 0; //Keep track of the number of hits
+        newGame.dealerHit(dealersHits);
 
         System.out.println("Enter 'hit' to hit or 'stay' to stay.");
         String hit = theDealer.nextLine();
@@ -44,33 +54,18 @@ public class Casino
             hit = theDealer.nextLine();
         }
     
-    //Dealer hits (Change 0 to the sum of the dealers cards)
-        while((0) < 17)
+    //Dealer hits
+        while((newGame.getDealerTotal()) < 17)
         {
             newGame.dealerHit(dealersHits);
             System.out.println(newGame.getDealerHand());
             dealersHits++;
         }
-    
-    //Checks to see who wins
-        if((newGame.getPlayerTotal())>(newGame.getDealerTotal()))
-        {
-            System.out.println("You won!");
-        }
-        else if((newGame.getPlayerTotal())==(newGame.getDealerTotal()))
-        {
-            System.out.println("Tie!  Nobody wins...");
-        }
-        else
-        {
-            System.out.println("Dealer won, better luck next time!");
-        }
 
-    //Payout and balance are printed
+    //Winner, Payout, and balance are printed
+        System.out.println(newGame.getWinner());
         System.out.println(newGame);
     }
-
-    
     public void playCraps()
     {
         //Craps newGame = new Craps(balance);
