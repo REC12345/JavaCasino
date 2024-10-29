@@ -39,24 +39,6 @@ public class Blackjack
     }
 
 //Methods(Game actions)
-    public void printPlayerHand()
-    {
-        System.out.println("Players Hand: " + Arrays.toString(playerHand));
-    }
-    public void printDealerHand()
-    {
-        System.out.println("Dealers Hand: " + Arrays.toString(dealerHand));
-    }
-
-    public int getPlayerTotal()
-    {
-        return playerTotal;
-    }
-    public int getDealerTotal()
-    {
-        return dealerTotal;
-    }
-
     public void playerHit()
     {
         playerHand[playersHits] = (int)(Math.random() * 14);
@@ -68,6 +50,39 @@ public class Blackjack
         dealerHand[dealersHits] = (int)(Math.random() * 14);
         dealerTotal += dealerHand[dealersHits];
         dealersHits++;
+    }
+
+    public void printPlayerHand()
+    {
+        System.out.println("Players Hand: " + Arrays.toString(playerHand));
+    }
+    public void printDealerHand()
+    {
+        System.out.println("Dealers Hand: " + Arrays.toString(dealerHand));
+    }
+
+    public void dealCards()
+    {
+        System.out.println("Welcome to BlackJack!\n");
+
+        playerHit();
+        playerHit();
+        printPlayerHand();
+
+        dealerHit();
+        printDealerHand();
+        dealerHit();
+
+        System.out.println("Enter 'hit' to hit or 'stay' to stay.");
+    }
+
+    public int getPlayerTotal()
+    {
+        return playerTotal;
+    }
+    public int getDealerTotal()
+    {
+        return dealerTotal;
     }
 
     public void getWinner()

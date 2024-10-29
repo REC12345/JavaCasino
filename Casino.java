@@ -13,20 +13,10 @@ public class Casino
     //Methods(Games)
     public void playBlackjack()
     {
-        //Game created
         Blackjack newGame = new Blackjack(balance);
-        System.out.println("Welcome to BlackJack!\n");
+        newGame.dealCards();
 
-        newGame.playerHit();
-        newGame.playerHit();
-        newGame.printPlayerHand();
-
-        newGame.dealerHit();
-        newGame.printDealerHand();
-        newGame.dealerHit();
-
-        //Player and Dealer hits
-        System.out.println("Enter 'hit' to hit or 'stay' to stay.");
+        //Player and Dealer hit
         String hit = theDealer.nextLine();
 
         while((newGame.getPlayerTotal() <= 21) || hit.equals("hit"))
