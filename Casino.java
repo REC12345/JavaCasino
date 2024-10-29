@@ -36,7 +36,7 @@ public class Casino
             System.out.println("Enter 'hit' to hit or 'stay' to stay.");
             hit = theDealer.nextLine();
         }
-        while((newGame.getDealerTotal()) <= 17)
+        while((newGame.getDealerTotal()) < 17)
         {
             newGame.dealerHit();
             newGame.printDealerHand();

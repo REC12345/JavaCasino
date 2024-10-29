@@ -6,9 +6,8 @@ public class Player
     {
         Scanner theDealer = new Scanner(System.in);
 
-        System.out.print("Welcome to the Casino. How much money are you starting with?");
+        System.out.print("Welcome to the Casino. How much money will you be playing with?");
         double userBalance = theDealer.nextDouble();
-        theDealer.nextLine();
 
         Casino theCasino = new Casino(userBalance);
         String keepPlaying;
