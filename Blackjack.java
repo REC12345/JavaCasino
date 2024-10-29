@@ -1,7 +1,6 @@
 
 import java.util.Arrays;
 
-
 public class Blackjack 
 {
 //Variables
@@ -13,6 +12,7 @@ public class Blackjack
     private int dealerTotal;
     private int playersHits;
     private int dealersHits;
+    private String winner;
 
 //Constructors
     public Blackjack(double b)
@@ -39,13 +39,13 @@ public class Blackjack
     }
 
 //Methods(Game actions)
-    public String getPlayerHand()
+    public void printPlayerHand()
     {
-        return (Arrays.toString(playerHand));
+        System.out.println("Players Hand: " + Arrays.toString(playerHand));
     }
-    public String getDealerHand()
+    public void printDealerHand()
     {
-        return (Arrays.toString(dealerHand));
+        System.out.println("Dealers Hand: " + Arrays.toString(dealerHand));
     }
 
     public int getPlayerTotal()
@@ -70,18 +70,16 @@ public class Blackjack
         dealersHits++;
     }
 
-//getWinner and toString
-    public String getWinner()
+    public void getWinner()
     {
-        String winner;
-        if((playerTotal==dealerTotal)||((playerTotal>21)&&(dealerTotal>21)))
+        if((playerTotal == dealerTotal) || ((playerTotal > 21) && (dealerTotal > 21)))
         {
             winner = "Tie! Nobody wins...";
             payout = 0;
         }
         else
         {
-            if((playerTotal>dealerTotal)&&(playerTotal<=21))
+            if((playerTotal > dealerTotal) && (playerTotal <= 21))
             {
                 winner = "Player Wins!";
                 balance += balance;
@@ -91,13 +89,16 @@ public class Blackjack
             {
                 winner = "Dealer Wins!  Better luck next time.";
                 balance = 0;
-                payout = -1*balance;
+                payout = balance * -1;
             }
         }
-        return winner;
     }
+
+
+//toString
+    
     public String toString()
     {
-        return "Payout: " + payout + "$\nFinal Balance: " + balance + "$";
+        return winner + "\nPayout: " + payout + "$\nFinal Balance: " + balance + "$";
     }
 }

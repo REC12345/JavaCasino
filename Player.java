@@ -4,43 +4,34 @@ public class Player
 {
     public static void main(String[] args) 
     {
-    //Starts the program
-            Scanner theDealer = new Scanner(System.in);
-            System.out.print("Welcome to the Casino.  Enter 'play' to start." );
-            String userDecision = theDealer.nextLine();
-            boolean play = (userDecision.equals("play"));
+        Scanner theDealer = new Scanner(System.in);
 
-   //Starts the casino
-            if(play == true)
+        System.out.print("Welcome to the Casino. How much money are you starting with?");
+        double userBalance = theDealer.nextDouble();
+        theDealer.nextLine();
+
+        Casino theCasino = new Casino(userBalance);
+        String keepPlaying;
+
+        do
+        {
+            System.out.println("Choose your game: \nBlackjack\nCraps\nRoulette\nSlots\n");
+            String game = theDealer.nextLine();
+            
+            switch(game)
             {
-            //Starting balance
-                System.out.println("How much money are you starting with?");
-                double userBalance = theDealer.nextDouble();
-                theDealer.nextLine();
-                Casino theCasino = new Casino(userBalance);
-
-                while(play == true)
-                {   
-                //Game choice
-                    System.out.println("Which would you like to play?");
-                    System.out.println("Blackjack\n Craps\n Roulette \n Slots\n");
-                    String game = theDealer.nextLine();
-                    
-                    switch(game)
-                    {
-                        case "Blackjack" -> theCasino.playBlackjack();
-                        case "Craps" -> theCasino.playCraps();
-                        case "Roulette" -> theCasino.playRoulette();
-                        case "Slots" -> theCasino.playSlots();
-                        default -> System.out.println("Please enter a valid game.");
-                    }
-                //Play again
-                    System.out.println("Enter 'play' to play again.");
-                    userDecision = theDealer.nextLine();
-                    play = userDecision.equals("play");
-                }
-                System.out.println(theCasino);
+                case "Blackjack" -> theCasino.playBlackjack();
+                case "Craps" -> theCasino.playCraps();
+                case "Roulette" -> theCasino.playRoulette();
+                case "Slots" -> theCasino.playSlots();
+                default -> System.out.println("Please enter a valid game.");
             }
-        System.out.println("Thank You for Playing!");
+
+            System.out.println("Enter 'play' to play again.");
+            keepPlaying = theDealer.nextLine();
+
+        }while(keepPlaying.equals("play"));
+
+        System.out.println(theCasino);
     }
 }
