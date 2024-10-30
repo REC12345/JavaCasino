@@ -5,9 +5,9 @@ public class DeckOfCards
     private ArrayList<Integer> cardDeck;
     private int numCards;
 
-    public DeckOfCards(int n)
+    public DeckOfCards(int nc)
     {
-        numCards = n;
+        numCards = nc;
         cardDeck = new ArrayList<>();
 
         for (int i = 0; i < numCards; i++)
