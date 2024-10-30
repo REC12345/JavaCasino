@@ -1,6 +1,4 @@
-
-//import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Blackjack 
@@ -8,12 +6,10 @@ public class Blackjack
 //Variables and Scanner
     private double balance;
     private double payout;
-    private int[] playerHand;
-    private int[] dealerHand;
     private int playerTotal;
     private int dealerTotal;
-    private int playersHits;
-    private int dealersHits;
+    private ArrayList<Integer> playerHand;
+    private ArrayList<Integer> dealerHand;
 
     Scanner theDealer = new Scanner(System.in);
 
@@ -21,26 +17,22 @@ public class Blackjack
     public Blackjack(double b)
     {
         balance = b;
-        playerHand = new int[10];
-        dealerHand = new int[10];
+        playerHand = new ArrayList<>();
+        dealerHand = new ArrayList<>();
         playerTotal = 0;
         dealerTotal = 0;
-        playersHits = 0;
-        dealersHits = 0;
     }
 
 //Methods(Game actions)
     public void playerHit()
     {
-        playerHand[playersHits] = (int)(Math.random() * 14);
-        playerTotal += playerHand[playersHits];
-        playersHits++;
+        playerHand.add((int)(Math.random() * 14));
+        playerTotal += playerHand.size();
     }
     public void dealerHit()
     {
-        dealerHand[dealersHits] = (int)(Math.random() * 14);
-        dealerTotal += dealerHand[dealersHits];
-        dealersHits++;
+        dealerHand.add((int)(Math.random() * 14));
+        dealerTotal += dealerHand.size();
     }
 
     public void dealCards()
@@ -49,10 +41,10 @@ public class Blackjack
 
         playerHit();
         playerHit();
-        System.out.println("Players Hand: " + Arrays.toString(playerHand));
+        System.out.println("Players Hand: " + playerHand);
 
         dealerHit();
-        System.out.println("Dealers Hand: " + Arrays.toString(dealerHand));
+        System.out.println("Dealers Hand: " + dealerHand);
         dealerHit();
     }
 
@@ -64,14 +56,13 @@ public class Blackjack
         while((playerTotal <= 21) || hit.equals("hit"))
         {
             playerHit();
-            System.out.println("Players Hand: " + Arrays.toString(playerHand));
-            System.out.println("Enter 'hit' to hit or 'stay' to stay.");
+            System.out.println("Players Hand: " + playerHand + "\nEnter 'hit' to hit or 'stay' to stay.");
             hit = theDealer.nextLine();
         }
         while(dealerTotal < 17)
         {
             dealerHit();
-            System.out.println("Dealers Hand: " + Arrays.toString(dealerHand));
+            System.out.println("Dealers Hand: " + dealerHand);
         }
     }
 
@@ -98,7 +89,6 @@ public class Blackjack
             }
         }
     }
-
 
 //toString
     
