@@ -20,21 +20,6 @@ public class Casino
 
         System.out.println(newGame);
     }
-
-    public void playCraps()
-    {
-        //Craps newGame = new Craps(balance);
-    }
-
-    public void playSlots()
-    {
-        //Slots newGame = new Slots(balance);
-    }
-
-    public void playRoulette()
-    {
-        //Roulette newGame = new Roulette(balance);
-    }
     
     //toString
     public String toString()

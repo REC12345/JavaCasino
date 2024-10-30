@@ -14,15 +14,12 @@ public class Player
 
         do
         {
-            System.out.println("Choose your game: \nBlackjack\nCraps\nRoulette\nSlots\n");
+            System.out.println("Choose your game: Blackjack\n");
             String game = theDealer.nextLine();
             
             switch(game)
             {
                 case "Blackjack" -> theCasino.playBlackjack();
-                case "Craps" -> theCasino.playCraps();
-                case "Roulette" -> theCasino.playRoulette();
-                case "Slots" -> theCasino.playSlots();
                 default -> System.out.println("Please enter a valid game.");
             }
 
