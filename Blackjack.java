@@ -13,8 +13,6 @@ public class Blackjack
     private int dealerTotal;
     private int playersHits;
     private int dealersHits;
-    private String winner;
-    private String hit;
 
     Scanner theDealer = new Scanner(System.in);
 
@@ -28,7 +26,6 @@ public class Blackjack
         dealerTotal = 0;
         playersHits = 0;
         dealersHits = 0;
-        hit = "";
     }
 
 //Methods(Game actions)
@@ -61,7 +58,7 @@ public class Blackjack
     public void playGame()
     {
         System.out.println("Enter 'hit' to hit or 'stay' to stay.");
-        hit = theDealer.nextLine();
+        String hit = theDealer.nextLine();
 
         while((playerTotal <= 21) || hit.equals("hit"))
         {
@@ -77,26 +74,26 @@ public class Blackjack
         }
     }
 
-    public void getWinner()
+    public String getWinner()
     {
         if((playerTotal == dealerTotal) || ((playerTotal > 21) && (dealerTotal > 21)))
         {
-            winner = "Tie! Nobody wins...";
             payout = 0;
+            return "Tie! Nobody wins...";
         }
         else
         {
             if((playerTotal > dealerTotal) && (playerTotal <= 21))
             {
-                winner = "Player Wins!";
                 balance += balance;
                 payout = balance;
+                return "Player Wins!";
             }
             else
             {
-                winner = "Dealer Wins!  Better luck next time.";
                 balance = 0;
                 payout = balance * -1;
+                return "Dealer Wins!  Better luck next time.";
             }
         }
     }
@@ -106,6 +103,6 @@ public class Blackjack
     
     public String toString()
     {
-        return winner + "\nPayout: " + payout + "$\nFinal Balance: " + balance + "$";
+        return getWinner() + "\nPayout: " + payout + "$\nFinal Balance: " + balance + "$";
     }
 }
