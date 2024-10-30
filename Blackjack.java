@@ -10,6 +10,7 @@ public class Blackjack
     private int dealerTotal;
     private ArrayList<Integer> playerHand;
     private ArrayList<Integer> dealerHand;
+    private ArrayList<Integer> cardDeck;
 
     Scanner theDealer = new Scanner(System.in);
 
@@ -17,10 +18,16 @@ public class Blackjack
     public Blackjack(double b)
     {
         balance = b;
-        playerHand = new ArrayList<>();
-        dealerHand = new ArrayList<>();
         playerTotal = 0;
         dealerTotal = 0;
+        playerHand = new ArrayList<>();
+        dealerHand = new ArrayList<>();
+
+        cardDeck = new ArrayList<>();
+        for (int i = 0; i < 52; i++)
+        {
+            cardDeck.add(i);
+        }
     }
 
 //Methods(Game actions)
