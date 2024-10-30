@@ -14,25 +14,10 @@ public class Casino
     public void playBlackjack()
     {
         Blackjack newGame = new Blackjack(balance);
+
         newGame.dealCards();
+        newGame.playGame();
 
-        //Player and Dealer hit
-        String hit = theDealer.nextLine();
-
-        while((newGame.getPlayerTotal() <= 21) || hit.equals("hit"))
-        {
-            newGame.playerHit();
-            newGame.printPlayerHand();
-            System.out.println("Enter 'hit' to hit or 'stay' to stay.");
-            hit = theDealer.nextLine();
-        }
-        while((newGame.getDealerTotal()) < 17)
-        {
-            newGame.dealerHit();
-            newGame.printDealerHand();
-        }
-
-        //Winner, Payout, and balance are printed
         System.out.println(newGame);
     }
 
