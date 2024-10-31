@@ -2,25 +2,39 @@ import java.util.ArrayList;
 
 public class DeckOfCards 
 {
-    private ArrayList<Integer> cardDeck;
-    private int numCards;
+    public static final String[][] globalDeck = {{"Color","Value","Suit"}};
 
-    public DeckOfCards(int nc)
+//Variables
+    private ArrayList<Integer> deck;
+    private int deckSize;
+    private int card;
+
+//Constructors
+    public DeckOfCards()
     {
-        numCards = nc;
-        cardDeck = new ArrayList<>();
-
-        for (int i = 0; i < numCards; i++)
-        {
-            cardDeck.add(i);
-        }
+        deck = new ArrayList<>(52);
+        deckSize = deck.size();
     }
 
+//Methods
     public int drawCard()
     {
-        int card = 0;
+        card = deck.get((int)(Math.random() * deckSize));
+        deck.remove(card);
         return card;
     }
 
+    public String getColor()
+    {
+        return "color";
+    }
+    public String getSuit()
+    {
+        return "suit";
+    }
 
+    public ArrayList<Integer> getDeck()
+    {
+        return deck;
+    }
 }
