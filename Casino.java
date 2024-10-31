@@ -20,6 +20,10 @@ public class Casino
 
         System.out.println(newGame);
     }
+    public void playWar()
+    {
+        
+    }
     
     //toString
     public String toString()
